@@ -55,3 +55,20 @@ Click on the `Details` link of the test action to check the results of your test
 6. Fix linter errors.
 7. **IMPORTANT NOTE**: feel free to research [auto-correct options for Rubocop](https://rubocop.readthedocs.io/en/latest/auto_correct/) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
 
+### In case you use WSL (Windows Subsystem for Linux) for Windows 10 and there is some issues with executable path
+
+1. Open the WSL on Visual Code (Ctrl + Shift + P) to bring it up the command palette and type in "default shell" and select WSL Bash 
+    1.1. On the terminal tab check the dropdown menu on the right side and make sure you are on WSL
+2. Add `gem install rubocop -v 0.81.0` (if you are getting some error such as "Carriage return character detected" run the command `gem install rubocop` 
+3. Make sure the rubocop path on visual code is correct;
+    3.1. Click in File > Preferences > Settings
+    3.2. Look for `ruby-rubocop`
+    3.3. If the Execute Path is empty run the command on WSL terminal `rbenv which rubocop` 
+    3.4. After execute the command `which rubocop`
+    3.5. Paste the output (e.g. /home/user/.rbenv/shims/rubocop) on the execute path
+3. Copy [.rubocop.yml](./.rubocop.yml) to the root directory of your project
+4. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
+    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
+5. At the WSL terminal run the command `rubocop`.
+6. Fix linter errors.
+7. **IMPORTANT NOTE**: feel free to research [auto-correct options for Rubocop](https://rubocop.readthedocs.io/en/latest/auto_correct/) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
